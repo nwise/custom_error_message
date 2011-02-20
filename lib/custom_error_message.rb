@@ -31,7 +31,7 @@ module CustomErrorMessage
       if options[:default].respond_to? :to_proc
         options[:default] = "^#{options[:default].to_proc.call(@base)}"
       end
-      
+
       add_without_procs(attribute, message, options)
     end
 
