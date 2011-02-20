@@ -1,10 +1,12 @@
 require 'spec_helper'
 
 def class_builder(field, message)
+
   test_class = Class.new do
     include ActiveModel::Validations
     include ActiveModel::Conversion
     extend ActiveModel::Naming
+
     validates_presence_of field, :message => message
     attr_accessor field
 
@@ -15,7 +17,7 @@ def class_builder(field, message)
     end
 
     def persisted?
-      false;
+      false
     end
 
     def self.model_name
@@ -27,8 +29,6 @@ def class_builder(field, message)
   return test_class.new
 end
 
-
-
 describe CustomErrorMessage do
 
   it 'without a caret, should not change behavior' do
@@ -38,10 +38,10 @@ describe CustomErrorMessage do
   end
 
   it 'with a caret, should allow for custom message' do
-    @model = class_builder(:email, "Please provide an email address")
+    @model = class_builder(:email, "^Please provide an email address")
     @model.valid?
     @model.errors.full_messages.should include("Please provide an email address")
   end
-end
 
+end
 
