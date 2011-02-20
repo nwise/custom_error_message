@@ -12,6 +12,7 @@ group :development do
   gem "rcov", "0.9.9"
   gem "rspec", "2.5.0"
   gem "rails", "3.0.4"
+  gem "facets"
 end
 
 

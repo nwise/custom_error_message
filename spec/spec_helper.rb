@@ -1,5 +1,5 @@
 require 'rubygems'
 require 'bundler/setup'
-
 require 'active_model'
+require 'facets'
 require 'custom_error_message'
