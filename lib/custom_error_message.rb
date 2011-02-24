@@ -1,6 +1,5 @@
 module CustomErrorMessage
   def self.included(receiver)
-    puts receiver.to_s
     receiver.send :include, InstanceMethods
     receiver.class_eval do
       alias_method_chain :full_messages, :tilde
