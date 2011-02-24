@@ -28,6 +28,7 @@ is begin the message with a '^' character.}
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "custom_error_message.gemspec",
     "lib/custom_error_message.rb",
     "spec/custom_error_messages_spec.rb",
     "spec/spec_helper.rb"
