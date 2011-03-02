@@ -28,15 +28,11 @@ is begin the message with a '^' character.}
 end
 Jeweler::RubygemsDotOrgTasks.new
 
-require 'rake/testtask'
-require 'rspec'
-Rake::TestTask.new(:test) do |test|
-  #test.libs << 'lib' << 'test'
-  #test.pattern = 'test/**/test_*.rb'
-  #test.verbose = true
-  test.libs << 'lib' << 'spec'
-  test.pattern = 'rspec spec/**/*_spec.rb'
-  test.verbose = true
+require 'rspec/core'
+require 'rspec/core/rake_task'
+
+RSpec::Core::RakeTask.new(:spec) do |spec|
+  spec.pattern = FileList['spec/**/*_spec.rb']
 end
 
 RSpec::Core::RakeTask.new(:rcov) do |spec|
