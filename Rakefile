@@ -12,7 +12,7 @@ require 'rake'
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
-  gem.name = "custom_error_message"
+  gem.name = "custom_error_messages"
   gem.homepage = "http://github.com/nwise/custom_error_message"
   gem.license = "MIT"
   gem.summary = %Q{This plugin gives you the option to not have your custom validation error message
@@ -28,10 +28,15 @@ is begin the message with a '^' character.}
 end
 Jeweler::RubygemsDotOrgTasks.new
 
-require 'rspec/core'
-require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new(:spec) do |spec|
-  spec.pattern = FileList['spec/**/*_spec.rb']
+require 'rake/testtask'
+require 'rspec'
+Rake::TestTask.new(:test) do |test|
+  #test.libs << 'lib' << 'test'
+  #test.pattern = 'test/**/test_*.rb'
+  #test.verbose = true
+  test.libs << 'lib' << 'spec'
+  test.pattern = 'rspec spec/**/*_spec.rb'
+  test.verbose = true
 end
 
 RSpec::Core::RakeTask.new(:rcov) do |spec|
@@ -46,7 +51,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "test_gem #{version}"
+  rdoc.title = "custom_error_message #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
