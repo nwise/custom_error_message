@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{custom_error_messages}
-  s.version = ""
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nathan Wise"]
@@ -27,6 +27,9 @@ is begin the message with a '^' character.}
     "README",
     "README.rdoc",
     "Rakefile",
+    "VERSION",
+    "custom_error_message.gemspec",
+    "custom_error_messages.gemspec",
     "lib/custom_error_message.rb",
     "spec/custom_error_messages_spec.rb",
     "spec/spec_helper.rb"
